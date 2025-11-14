@@ -6,8 +6,8 @@ on:
     branches:
       - main
     paths:
-      - 'spotifychurn_raw/**'
-      - 'preprocessing/automate_Rosita-Angel-Cahyadi.py'
+      - 'spotifychurn_raw.csv'
+      - 'preprocessing/automate_Rosita_Angel_Cahyadi.py'
 
 jobs:
   preprocess:
@@ -33,7 +33,7 @@ jobs:
     # Jalankan preprocessing otomatis
     - name: Run preprocessing script
       run: |
-        python preprocessing/automate_Rosita-Angel-Cahyadi.py
+        python preprocessing/automate_Rosita_Angel_Cahyadi.py
 
     # Upload hasil preprocessing ke artifact
     - name: Upload processed dataset
