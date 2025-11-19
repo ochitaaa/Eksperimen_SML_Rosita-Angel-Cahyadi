@@ -6,38 +6,38 @@ on:
     branches:
       - main
     paths:
-      - 'spotifychurn_raw.csv'
-      - 'preprocessing/automate_Rosita_Angel_Cahyadi.py'
+      - "Credit Score Dataset_raw.csv"
+      - "preprocessing/automate_Rosita_Angel_Cahyadi.py"
 
 jobs:
   preprocess:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout repository
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      # Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    # Setup Python environment
-    - name: Setup Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
+      # Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-    # Install dependencies
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pandas numpy matplotlib seaborn scikit-learn scipy
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy matplotlib seaborn scikit-learn scipy
 
-    # Jalankan preprocessing otomatis
-    - name: Run preprocessing script
-      run: |
-        python preprocessing/automate_Rosita_Angel_Cahyadi.py
+      # Jalankan preprocessing otomatis
+      - name: Run preprocessing script
+        run: |
+          python preprocessing/automate_Rosita_Angel_Cahyadi.py
 
-    # Upload hasil preprocessing ke artifact
-    - name: Upload processed dataset
-      uses: actions/upload-artifact@v4
-      with:
-        name: spotifychurn_preprocessing
-        path: preprocessing/spotifychurn_preprocessing.csv
+      # Upload hasil preprocess sebagai artifact
+      - name: Upload processed dataset
+        uses: actions/upload-artifact@v4
+        with:
+          name: Credit_Score_Dataset_preprocessing
+          path: "preprocessing/Credit_Score_Dataset_preprocessing.csv"
