@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - "Credit Score Dataset_raw.csv"
+      - "diabetes_dataset_2019_raw.csv"
       - "preprocessing/automate_Rosita_Angel_Cahyadi.py"
 
 jobs:
@@ -40,4 +40,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Credit_Score_Dataset_preprocessing
-          path: "preprocessing/Credit_Score_Dataset_preprocessing.csv"
+          path: "preprocessing/diabetes_dataset_2019_preprocessing.csv"
